@@ -1,5 +1,6 @@
 import {db} from '../config/firebase';
 import {collection, getDocs, addDoc, deleteDoc, updateDoc, doc, getDoc, setDoc, query, where} from 'firebase/firestore';
+import {auth} from '../config/firebase'
 
 // this function is to create a record if it doesn't exist, else update the fields
 export async function createOrUpdateRecord(collectionName, recordId, updatedFields) {
@@ -13,7 +14,7 @@ export async function createOrUpdateRecord(collectionName, recordId, updatedFiel
     await setDoc(docRef, data, options);
     console.log('Document created or updated successfully!');
   } catch (error) {
-    console.error('Error creating or updating document:', error);
+    console.log('Error creating or updating document:', error);
   }
 };
 
@@ -30,7 +31,7 @@ export async function updateRecord(collectionName, recordId, updatedFields) {
     console.log('Record updated successfully!');
     return true;
   } catch (error) {
-    console.error('Error updating record:', error);
+    console.log('Error updating record:', error);
     return false;
   }
 }
@@ -45,7 +46,7 @@ export async function addRecord(collectionName, newRecordData) {
     const newDocumentId = newDocRef.id;
     console.log('New Document ID:', newDocumentId);
   } catch (error) {
-    console.error('Error adding document:', error);
+    console.log('Error adding document:', error);
   }
 }
 
@@ -58,7 +59,7 @@ export async function deleteRecord(collectionName, recordId) {
     console.log('Record deleted successfully!');
     return true;
   } catch (error) {
-    console.error('Error deleting record:', error);
+    console.log('Error deleting record:', error);
     return false;
   }
 }
@@ -80,7 +81,7 @@ export async function getRecordById(collectionName, recordId) {
       return null;
     }
   } catch (error) {
-    console.error('Error getting record by ID:', error);
+    console.log('Error getting record by ID:', error);
     return null;
   }
 }
@@ -98,33 +99,15 @@ export async function getRecords(collectionName) {
 
     return allDocuments;
   } catch (error) {
-    console.error('Error getting all documents:', error);
+    console.log('Error getting all documents:', error);
     return [];
   }
 }
 
-export async function getRecordsWithId(collectionName) {
-  try {
-    const collectionRef = collection(db, collectionName);
-    const querySnapshot = await getDocs(collectionRef);
-
-    // Extract the data from the documents and store it in an array
-    const allDocuments = [];
-    querySnapshot.forEach((doc) => {
-      allDocuments.push(doc);
-    });
-
-    return allDocuments;
-  } catch (error) {
-    console.error('Error getting all documents:', error);
-    return [];
-  }
-}
 
 export async function getRecord(collectionName, queryPassed) {
   try {
     const collectionRef = collection(db, collectionName);
-
     // Create a Firestore query with the given condition
     const queryRef = query(collectionRef, ...queryPassed);
 
@@ -135,15 +118,29 @@ export async function getRecord(collectionName, queryPassed) {
       return null;
     }
 
-    // There should be only one matching document since we're using getRecord
+    // Get the first matching document (assuming there is only one matching document)
     const doc = querySnapshot.docs[0];
-    return doc.data();
+    const id = doc.id; // Get the document ID
+    const data = doc.data(); // Get the document data
+
+    // Return an object containing both the ID and the data
+    return { id, ...data };
   } catch (error) {
-    console.error('Error getting document:', error);
+    console.log('Error getting document:', error);
     return null;
   }
 }
 
+export const handleLogout = async () => {
+  try {
+    await auth.signOut();
+    // The user is now logged out
+    console.log("User logged out successfully!");
+  } catch (error) {
+    // An error occurred during the logout process
+    console.log("Error logging out:", error);
+  }
+};
 
 //usage
 
