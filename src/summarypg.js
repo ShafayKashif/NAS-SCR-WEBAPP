@@ -11,6 +11,7 @@ const summaryPg = () => {
     return (
         <div className="summary-page">
             <Homepage />
+            <h1 className="heading2">Today's Summary</h1>
             
             <div className="sub-container center-top">
                 <img src="/rickshaw.png" alt="Image 1" />

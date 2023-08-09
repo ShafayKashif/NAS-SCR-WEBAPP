@@ -26,10 +26,10 @@
   color: white; /* White text color */
 }
 
-/* Add a class for active tab */
+
 .active {
-  background-color: #1E3647; /* Blue background color for active tab */
-  color: white; /* White text color for active tab */
+  background-color: #1E3647; 
+  color: white; 
 }
 
 .settings-dropdown {
@@ -42,9 +42,9 @@
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  list-style: none; /* Remove list-style */
-  padding: 0; /* Remove padding to avoid extra space */
-  width: 180px; /* Set the width of the dropdown */
+  list-style: none; 
+  padding: 0; 
+  width: 180px; 
   left:-60px;
 }
 
@@ -56,8 +56,8 @@
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  text-align: left; /* Align the text to the left */
-  color: #333; /* Set the color of the dropdown items */
+  text-align: left;
+  color: #000000; 
   font-size: 15px;
   
   

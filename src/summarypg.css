@@ -44,13 +44,65 @@
   }
     .sub-container txt {
         
-            /* Add your desired styles here */
-            /* For example: */
+            
             font-size: 16px;
             color: #333;
             margin: 10px;
             align-items: right;
           }
+
+          .data-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-height: 50vh; 
+            overflow-y: auto;
+            width: 100%;
+            background-color: blue;
+        }
+        
+        .data-item {
+            border: 1px solid #000;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+        }
+  
+        .details-link {
+          color: blue;
+          text-decoration: underline;
+          cursor: pointer;
+      }
+
+
+      .heading {
+        position: absolute;
+        top: 150px; 
+        left: 10px;
+        margin: 0;
+        padding: 10px;
+        font-size: 2.0rem;
+        color: #285A84;
+    }
     
+    @media screen and (max-width: 768px) {
+      .heading {
+          font-size: 1.2rem; 
+      }
+  }
+ 
+    .heading2 {
+      position: absolute;
+      top: 80px; 
+      left: 550px;
+      margin: 0;
+      padding: 10px;
+      font-size: 2.0rem;
+      color: #285A84;
+  }
   
-  
+    
+    
+    
+    

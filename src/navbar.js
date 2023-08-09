@@ -134,13 +134,6 @@ const Navbar = () => {
   );
 };
 
-{/* <Routes>
-<Route exact path="/driver-info" component={DriverInfo} />
-<Route exact path="/bss-info" component={BSSInfo} />
-<Route exact path="/rickshaws-menu" component={RickshawsMenu} />
-<Route exact path="/support-requests" component={StationMonitoring} />
-<Route exact path="/settings" component={Settings} />
-</Routes> */}
 
 const App = () => (
   <div>
