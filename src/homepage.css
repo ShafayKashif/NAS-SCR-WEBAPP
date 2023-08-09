@@ -33,8 +33,8 @@
 .navbar {
   position: absolute;
   top: 20px;
-  left: calc(20px + 15% + 20px); /* Adjust this value based on your design */
-  width: calc(100% - (20px + 15% + 20px)); /* Calculate the remaining width */
+  left: calc(20px + 15% + 20px); 
+  width: calc(100% - (20px + 15% + 20px)); 
 }
 
 @media (max-width: 768px) {

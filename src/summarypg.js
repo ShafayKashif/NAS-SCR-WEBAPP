@@ -1,20 +1,38 @@
+
+
+
+
 import React from 'react';
 import Homepage from './homepage';
 import './homepage.css';
-import './summarypg.css'
+import './summarypg.css';
 
-const summarypg = () => {
+const summaryPg = () => {
     return (
-     
-        <div className="container">
-            <Homepage /> {/*  */}
+        <div className="summary-page">
+            <Homepage />
+            
+            <div className="sub-container center-top">
+                <img src="/rickshaw.png" alt="Image 1" />
+                <div class='sub container txt' id='rickshaw-summary'>
+                Rickshaw summary
+                </div>
+                {/* <p>Rickshaw summary</p> */}
+            </div>
+            <div className="sub-container center-bottom">
+                <img src="/battery.png" alt="Image 2" />
+                <p>Battery info</p>
+            </div>
+            <div className="sub-container center-left">
+                <img src="/bell.png" alt="Image 3" />
+                <p>Number of support reqs</p>
+            </div>
+            <div className="sub-container center-right">
+                <img src="/fin.png" alt="Image 4" />
+                <p>Finances</p>
+            </div>
         </div>
-        
-      
-      
     );
-  };
+};
 
-export default summarypg;
-
-
+export default summaryPg;
