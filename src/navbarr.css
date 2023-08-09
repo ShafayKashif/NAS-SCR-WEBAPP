@@ -1,0 +1,66 @@
+.navbar {
+  background-color: rgba(51, 51, 51, 0.01);
+  color: #1E3647;
+  font-size: 20px;
+  
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  color: #1E3647
+}
+
+.nav-item:hover {
+  background-color: #1E3647; /* Blue background color */
+  color: white; /* White text color */
+}
+
+/* Add a class for active tab */
+.active {
+  background-color: #1E3647; /* Blue background color for active tab */
+  color: white; /* White text color for active tab */
+}
+
+.settings-dropdown {
+  position: relative;
+}
+
+.settings-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style: none; /* Remove list-style */
+  padding: 0; /* Remove padding to avoid extra space */
+  width: 180px; /* Set the width of the dropdown */
+  left:-60px;
+}
+
+.settings-dropdown:hover .settings-dropdown-content {
+  display: block;
+}
+
+.settings-dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: left; /* Align the text to the left */
+  color: #333; /* Set the color of the dropdown items */
+  font-size: 15px;
+  
+  
+  
+}
+

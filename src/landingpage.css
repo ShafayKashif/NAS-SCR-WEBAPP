@@ -1,0 +1,75 @@
+
+
+
+.landing-page {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+  }
+  
+  .image-container {
+    flex: 1; /* Take up 50% of the available width */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Maintain image aspect ratio while covering container */
+  }
+  
+  .content-container {
+    flex: 1; /* Take up 50% of the available width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+  }
+  
+  .logo {
+    width: 350px; 
+    height: auto;
+    margin-bottom: 140px;
+    
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 50px; /* Adjust spacing below the heading */
+    margin-top: -50px; /* Add margin to move the heading slightly higher */
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 8px;
+    width: 150%;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  
+  button {
+    padding: 15px 20px;
+    background-color: #1E3647;
+    color: white;
+    border: 5px;
+    cursor: pointer;
+    width: 168%;
+    margin-top: 10px;
+    border-radius:10px ;
+    border-color: #1E3647;
+    transition: 0.3s;
+  }
+
+  button:hover{
+    background-color: #ffffff;
+    color: #1E3647;
+    border:5px;
+  }

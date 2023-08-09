@@ -1,0 +1,23 @@
+.summary-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide the page into two columns */
+    grid-gap: 20px; /* Add some gap between containers */
+    align-items: start; /* Align items at the top of each cell */
+
+    /* Additional styling as needed */
+}
+
+.containerr {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Divide each container into two columns */
+    grid-gap: 10px; /* Add gap between image and text */
+    align-items: center; /* Align items vertically in the container */
+}
+
+.image img {
+    max-width: 100%; /* Ensure the image doesn't overflow its container */
+}
+
+.text {
+    font-size: 20px;
+}
